@@ -17,16 +17,15 @@ INSTALLED_APPS = [
     'django.contrib.auth',
 
     # installed
-    'accounts',
-    'catalog',
-    'inventory',
-    'orders',
-    'rest_framework',
+    'apps.accounts.apps.AccountsConfig',
+    # 'apps.catalog.apps.AccountsConfig',
+    # 'apps.inventory.apps.AccountsConfig',
+    # 'apps.orders.apps.AccountsConfig',
+    # 'apps.rest_framework.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # ...
 ]
 
 ROOT_URLCONF = 'config.urls'
