@@ -19,12 +19,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # installed
+    # self Created apps
     'apps.accounts.apps.AccountsConfig',
     # 'apps.catalog.apps.AccountsConfig',
     # 'apps.inventory.apps.AccountsConfig',
     # 'apps.orders.apps.AccountsConfig',
     # 'apps.rest_framework.apps.AccountsConfig',
+
+    # Installed apps
+    'phonenumber_field',
 ]
 
 TEMPLATES = [
