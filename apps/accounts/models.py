@@ -47,7 +47,7 @@ class Address(models.Model):
 
 
 class PhoneNumber(models.Model):
-    user         = models.OneToOneField(User, on_delete=models.CASCADE, related_name='phones')
+    user         = models.ForeignKey(User, on_delete=models.CASCADE, related_name='phones')
     number       = PhoneNumberField(unique=True, blank=True, null=True)
     is_primary   = models.BooleanField(default=False)
 
