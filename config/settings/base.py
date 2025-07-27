@@ -20,8 +20,8 @@ INSTALLED_APPS = [
 
     # self Created apps
     'apps.accounts.apps.AccountsConfig',
-    # 'apps.catalog.apps.AccountsConfig',
-    # 'apps.inventory.apps.AccountsConfig',
+    'apps.catalog.apps.CatalogConfig',
+    'apps.inventory.apps.InventoryConfig',
     # 'apps.orders.apps.AccountsConfig',
     # 'apps.rest_framework.apps.AccountsConfig',
 
