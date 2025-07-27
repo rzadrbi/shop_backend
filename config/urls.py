@@ -6,7 +6,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
 )
 from config import settings
-from apps.catalog.admin import get_category_attributes
+from apps.catalog.views import get_category_attributes
 
 urlpatterns = [
     path('admin/', admin.site.urls),

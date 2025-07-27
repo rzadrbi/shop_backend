@@ -1,11 +1,15 @@
-{% extends "admin/catalog/product/select_category.html" %}
-{% load static %}
+{% extends "admin/change_form.html" %}
+{% block content %}
+  <h2>Add Product - {{ category.name }}</h2>
+  <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <h3>Attributes</h3>
+    {% for attr in attributes %}
+      <label>{{ attr.attribute.name }}:</label>
+      <input type="text" name="attr_{{ attr.attribute.id }}">
+      <br>
+    {% endfor %}
 
-{% block extrahead %}
-    {{ block.super }}
-    <script src="{% static 'catalog/js/product_attribute_loader.js' %}"></script>
-{% endblock %}
-
-{% block after_related_objects %}
-    <div id="attribute-container" style="margin-top: 20px;"></div>
+    <input type="submit" value="Save">
+  </form>
 {% endblock %}

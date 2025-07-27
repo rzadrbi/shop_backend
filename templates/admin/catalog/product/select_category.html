@@ -1,13 +1,41 @@
 {% extends "admin/base_site.html" %}
+{% load static %}
+
 {% block content %}
-<h1>select category</h1>
-<form method="post">{% csrf_token %}
-    <label for="category">category:</label>
-    <select name="category" required>
+  <h1>choose category</h1>
+
+  <form method="post" action="{% url "admin:catalog_product_select_category" %}">
+    {% csrf_token %}
+    <div>
+      <label for="category">choose category :</label>
+      <select name="category" id="category" required>
+        <option value="" disabled selected>-- category --</option>
         {% for category in categories %}
-            <option value="{{ category.id }}">{{ category.name }}</option>
+          <option value="{{ category.id }}">{{ category.name }}</option>
+        {% empty %}
+          <option disabled>category not available.</option>
         {% endfor %}
-    </select>
-    <button type="submit">continue</button>
-</form>
+      </select>
+    </div>
+    <br />
+    <button type="submit" class="default">choose</button>
+  </form>
+
+  <style>
+    select {
+      padding: 6px;
+      font-size: 14px;
+      width: 250px;
+    }
+    button.default {
+      background-color: #0a6aa1;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    button.default:hover {
+      background-color: #084e70;
+    }
+  </style>
 {% endblock %}
