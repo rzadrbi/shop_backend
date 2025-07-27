@@ -1,0 +1,11 @@
+{% extends "admin/catalog/product/select_category.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="{% static 'catalog/js/product_attribute_loader.js' %}"></script>
+{% endblock %}
+
+{% block after_related_objects %}
+    <div id="attribute-container" style="margin-top: 20px;"></div>
+{% endblock %}
